@@ -51,7 +51,7 @@ body {
 
 /* ─── Hero ────────────────────────────────────── */
 .hero {
-  padding: 72px 20px 48px;
+  padding: 72px 20px 0;
   text-align: center;
 }
 
@@ -159,7 +159,8 @@ h3 {
   transition: border-color 0.2s, color 0.2s;
 }
 
-.booking-mail a:hover {
+.booking-mail a:hover,
+.booking-mail a:focus-visible {
   border-color: var(--text);
 }
 
@@ -202,7 +203,29 @@ h3 {
   text-decoration: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .tagline {
+    font-size: 36px;
+  }
+
+  .subline {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    margin-bottom: 32px;
+  }
+
+  .poem p {
+    font-size: 22px;
+  }
+
+  .booking-mail a {
+    font-size: 22px;
+  }
+
+  h3 {
+    margin-top: 36px;
+  }
+
   .socials li {
     flex: 0 0 100%;
   }
