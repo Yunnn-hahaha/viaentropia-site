@@ -1,12 +1,11 @@
 :root {
   --bg: #f9f9f9;
-  --text: #111111;
+  --text: #111;
   --muted: #555;
-  --accent: #000;
   --maxw: 960px;
+  --border: 2px solid #111;
 }
 
-/* Reset */
 * {
   box-sizing: border-box;
 }
@@ -15,100 +14,181 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Space Grotesk', Arial, sans-serif;
   line-height: 1.6;
 }
 
-/* Layout */
-.hero,
-.contact {
-  padding: 40px 20px;
+/* ─── Header ─────────────────────────────────── */
+.site-header {
+  background: #111;
+  padding: 14px 20px;
 }
 
-.hero {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.hero-inner,
-.contact-inner,
 .header-inner {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-small {
+  width: 38px;
+  height: auto;
+  filter: invert(1);
+}
+
+.site-name {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* ─── Hero ────────────────────────────────────── */
+.hero {
+  padding: 56px 20px 40px;
+  text-align: center;
+}
+
+.hero-inner {
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
 }
 
-/* Header */
-.site-header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  padding: 10px 20px;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-small {
-  width: 40px;
-  height: auto;
-}
-
-.site-name {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* Typography */
 .tagline {
-  margin: 10px 0 5px;
-  font-size: 18px;
-  font-weight: 500;
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .subline {
-  margin-bottom: 25px;
-  color: var(--muted);
-  font-size: 14px;
+  margin: 0 0 36px;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
-/* Band image */
+/* ─── Band photo ──────────────────────────────── */
 .band-photo {
   width: 100%;
   max-width: 880px;
-  margin: 20px auto 30px;
   display: block;
+  margin: 0 auto 0;
+  border: var(--border);
 }
 
-/* Poem block */
+/* ─── Poem — full-width black ─────────────────── */
 .poem {
   background: #000;
   color: #fff;
-  padding: 25px 20px;
-  margin: 30px auto;
-  max-width: 760px;
+  width: 100%;
+  padding: 72px 20px;
+}
+
+.poem-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
 }
 
 .poem p {
-  margin: 5px 0;
-  font-size: 15px;
+  margin: 6px 0;
+  font-family: 'Cardo', Georgia, serif;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.6;
 }
 
-/* Contact section */
+/* ─── Contact ─────────────────────────────────── */
 .contact {
+  padding: 64px 20px 48px;
   text-align: center;
+  border-top: var(--border);
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
 }
 
 h2,
 h3 {
-  font-size: 14px;
-  font-weight: 600;
-  margin: 20px 0 10px;
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
-/* Links */
+.booking-mail {
+  margin-bottom: 48px;
+}
+
+.booking-mail a {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: var(--border);
+  padding-bottom: 3px;
+}
+
+.booking-mail a:hover {
+  color: var(--muted);
+  border-color: var(--muted);
+}
+
+/* ─── Social buttons ──────────────────────────── */
+.socials {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 56px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.socials li {
+  display: block;
+}
+
+.socials a {
+  display: inline-block;
+  border: var(--border);
+  padding: 11px 26px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.1s, color 0.1s;
+}
+
+.socials a:hover {
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ─── Footer ──────────────────────────────────── */
+.site-footer {
+  margin-top: 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* ─── Global links ────────────────────────────── */
 a {
   color: var(--text);
   text-decoration: none;
@@ -116,23 +196,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Social links */
-.socials {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-}
-
-.socials li {
-  display: inline;
-  margin: 0 10px;
-}
-
-/* Footer */
-.site-footer {
-  margin-top: 30px;
-  font-size: 12px;
-  color: #777;
 }
