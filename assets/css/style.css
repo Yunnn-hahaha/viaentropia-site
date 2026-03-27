@@ -5,9 +5,10 @@
   --muted: #d5d0c4;
   --line: rgba(255,255,255,0.08);
   --gold: #d4b06a;
-  --maxw: 980px;
+  --maxw: 900px;
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
 }
@@ -21,24 +22,16 @@ body {
   min-height: 100vh;
   color: var(--text);
   background:
-    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.82)),
-    url("../images/viaEntropia_ekipa_ozadje1-2.png") center top / cover no-repeat fixed,
-    var(--bg);
+    radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 40%),
+    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
   font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.34);
-  pointer-events: none;
-}
-
+/* Layout */
 .hero,
 .contact {
-  position: relative;
-  z-index: 1;
+  padding: 40px 20px;
 }
 
 .hero {
@@ -46,7 +39,6 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 20px 28px;
 }
 
 .hero-inner,
@@ -57,131 +49,110 @@ body::before {
   text-align: center;
 }
 
+/* Logo */
 .logo {
   width: 150px;
-  max-width: 42vw;
+  max-width: 40vw;
   height: auto;
-  display: block;
-  margin: 0 auto 10px;
-  filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.45));
+  margin-bottom: 10px;
 }
 
+/* Typography */
 h1 {
   margin: 0;
-  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  letter-spacing: 0.04em;
   font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: 0.03em;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
   margin: 12px 0 6px;
-  font-size: clamp(1.15rem, 2.4vw, 1.65rem);
-  font-weight: 700;
-  color: var(--text);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .subline {
-  margin: 0 0 28px;
-  font-size: 1.08rem;
+  margin: 0 0 30px;
   color: var(--muted);
+  font-size: 1.05rem;
 }
 
+/* Band Image */
 .band-photo {
-  width: min(760px, 100%);
+  width: min(750px, 100%);
   display: block;
-  margin: 0 auto 30px;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  margin: 20px auto 40px;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
 }
 
+/* Poem */
 .poem {
-  max-width: 720px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 20px;
+  border-left: 2px solid var(--gold);
+  background: rgba(255,255,255,0.02);
 }
 
 .poem p {
-  margin: 0.18em 0;
-  font-size: 1.12rem;
-  line-height: 1.6;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  margin: 0.3em 0;
 }
 
+/* Contact Section */
 .contact {
-  padding: 18px 20px 60px;
-}
-
-.contact-inner {
   border-top: 1px solid var(--line);
-  padding-top: 28px;
 }
 
-h2,
-h3 {
+h2, h3 {
   margin: 0 0 10px;
   font-size: 1rem;
-  font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--gold);
+  text-transform: uppercase;
 }
 
 .booking-mail {
-  margin: 0 0 28px;
-  font-size: 1.1rem;
+  margin-bottom: 25px;
 }
 
+/* Links */
 a {
   color: var(--text);
   text-decoration: none;
+  border-bottom: 1px solid rgba(212,176,106,0.4);
 }
 
 a:hover {
   color: var(--gold);
 }
 
+/* Socials */
 .socials {
   list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
   display: flex;
+  gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px 26px;
-  padding: 0;
-  margin: 10px 0 0;
 }
 
-.socials li {
-  margin: 0;
-}
-
-.socials a {
-  border-bottom: 1px solid rgba(212, 176, 106, 0.45);
-  padding-bottom: 2px;
-}
-
-@media (max-width: 700px) {
-  body {
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.84)),
-      url("../images/viaEntropia_ekipa_ozadje1-2.png") center top / cover no-repeat,
-      var(--bg);
-  }
-
-  .hero {
-    padding: 36px 16px 20px;
-  }
-
-  .band-photo {
-    margin-bottom: 24px;
-  }
-
-  .poem p {
-    font-size: 1rem;
-  }
-
+/* Mobile */
+@media (max-width: 640px) {
+  .hero,
   .contact {
-    padding: 12px 16px 42px;
+    padding: 30px 15px;
+  }
+
+  .poem {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 }
