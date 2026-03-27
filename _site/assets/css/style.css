@@ -1,11 +1,9 @@
 :root {
-  --bg: #050505;
-  --bg-soft: #0d0d0d;
-  --text: #f3f0e8;
-  --muted: #d5d0c4;
-  --line: rgba(255,255,255,0.08);
-  --gold: #d4b06a;
-  --maxw: 900px;
+  --bg: #f9f9f9;
+  --text: #111111;
+  --muted: #555;
+  --accent: #000;
+  --maxw: 960px;
 }
 
 /* Reset */
@@ -13,18 +11,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
-  min-height: 100vh;
+  background: var(--bg);
   color: var(--text);
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 40%),
-    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
 
@@ -35,124 +26,113 @@ body {
 }
 
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .hero-inner,
-.contact-inner {
+.contact-inner,
+.header-inner {
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
-  text-align: center;
 }
 
-/* Logo */
-.logo {
-  width: 150px;
-  max-width: 40vw;
+/* Header */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-small {
+  width: 40px;
   height: auto;
-  margin-bottom: 10px;
+}
+
+.site-name {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 /* Typography */
-h1 {
-  margin: 0;
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  letter-spacing: 0.04em;
-  font-weight: 700;
-}
-
 .tagline {
-  margin: 12px 0 6px;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  margin: 10px 0 5px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .subline {
-  margin: 0 0 30px;
+  margin-bottom: 25px;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 14px;
 }
 
-/* Band Image */
+/* Band image */
 .band-photo {
-  width: min(750px, 100%);
+  width: 100%;
+  max-width: 880px;
+  margin: 20px auto 30px;
   display: block;
-  margin: 20px auto 40px;
-  border-radius: 6px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  opacity: 0.95;
 }
 
-/* Poem */
+/* Poem block */
 .poem {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
-  border-left: 2px solid var(--gold);
-  background: rgba(255,255,255,0.02);
+  background: #000;
+  color: #fff;
+  padding: 25px 20px;
+  margin: 30px auto;
+  max-width: 760px;
 }
 
 .poem p {
-  margin: 0.3em 0;
+  margin: 5px 0;
+  font-size: 15px;
 }
 
-/* Contact Section */
+/* Contact section */
 .contact {
-  border-top: 1px solid var(--line);
+  text-align: center;
 }
 
-h2, h3 {
-  margin: 0 0 10px;
-  font-size: 1rem;
-  letter-spacing: 0.12em;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-
-.booking-mail {
-  margin-bottom: 25px;
+h2,
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 10px;
 }
 
 /* Links */
 a {
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid rgba(212,176,106,0.4);
 }
 
 a:hover {
-  color: var(--gold);
+  text-decoration: underline;
 }
 
-/* Socials */
+/* Social links */
 .socials {
   list-style: none;
   padding: 0;
-  margin: 18px 0 0;
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 10px 0;
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .hero,
-  .contact {
-    padding: 30px 15px;
-  }
+.socials li {
+  display: inline;
+  margin: 0 10px;
+}
 
-  .poem {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
+/* Footer */
+.site-footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #777;
 }
