@@ -1,29 +1,136 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #0f0f0f;
-  color: #ffffff;
+:root {
+  --bg: #050505;
+  --text: #f4f1e8;
+  --muted: #c9c3b5;
+  --accent: #d7b26d;
+  --maxw: 900px;
 }
 
-section {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: auto;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 35%),
+    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.hero,
+.contact {
+  padding: 56px 20px;
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.hero-inner,
+.content {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
   text-align: center;
 }
 
+.logo-wrap {
+  margin-bottom: 24px;
+}
+
+.logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
 h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.tagline {
+  margin: 12px 0 6px;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.subline {
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.poem {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(2px);
+}
+
+.poem p {
+  margin: 0.3em 0;
+}
+
+.contact {
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin: 0 0 10px;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(215,178,109,0.45);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.socials li {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .contact {
+    padding: 40px 16px;
+  }
+
+  .poem {
+    padding: 18px 14px;
+  }
 }
